@@ -13,7 +13,7 @@ export const profile = {
 export const skills = [
   {
     category: 'Front-end',
-    items: ['React', 'React Native', 'TypeScript', 'JavaScript', 'HTML/CSS', 'Tailwind CSS', 'Bootstrap', 'Vite'],
+    items: ['React', 'React Native', 'Next.js', 'TypeScript', 'JavaScript', 'HTML/CSS', 'Tailwind CSS', 'Bootstrap', 'Vite'],
   },
   {
     category: 'Back-end',

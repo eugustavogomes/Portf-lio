@@ -17,6 +17,21 @@ body {
     @apply inline-flex items-center gap-2 bg-green-500 text-black px-5 py-2 rounded-lg hover:bg-green-400 transition font-semibold;
   }
   .btn-outline {
-    @apply inline-flex items-center gap-2 border border-zinc-600 text-zinc-300 px-5 py-2 rounded-lg hover:border-green-500 hover:text-green-400 transition;
+    @apply inline-flex items-center justify-center gap-2 border border-zinc-600 text-zinc-300 p-2.5 rounded-lg hover:border-green-500 hover:text-green-400 transition;
   }
+}
+
+@keyframes slide-from-right {
+  from { opacity: 0; transform: translateX(28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slide-from-left {
+  from { opacity: 0; transform: translateX(-28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.card-slide-right {
+  animation: slide-from-right 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.card-slide-left {
+  animation: slide-from-left 0.38s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }

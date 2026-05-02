@@ -76,28 +76,23 @@ export default function Hero() {
       <p className="text-zinc-400 mb-6">{profile.location}</p>
 
       <div className="flex gap-3 flex-wrap justify-center">
-        <a href={profile.github} target="_blank" rel="noopener noreferrer" className="btn-outline">
+        <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" className="btn-outline" aria-label="Currículo">
+          <FileDown size={18} />
+        </a>
+        <a href={profile.github} target="_blank" rel="noopener noreferrer" className="btn-outline" aria-label="GitHub">
           <GitHubIcon />
-          GitHub
         </a>
-        <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="btn-outline">
+        <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="btn-outline" aria-label="LinkedIn">
           <LinkedInIcon />
-          LinkedIn
         </a>
-        <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">
-          <FileDown size={16} />
-          Currículo
-        </a>
-        <a href={`mailto:${profile.email}`} className="btn-outline">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" width={16} height={16} aria-hidden>
+        <a href={`mailto:${profile.email}`} className="btn-outline" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" width={18} height={18} aria-hidden>
             <rect width="20" height="16" x="2" y="4" rx="2" />
             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
           </svg>
-          Email
         </a>
-        <a href={profile.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-outline">
+        <a href={profile.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-outline" aria-label="WhatsApp">
           <WhatsAppIcon />
-          WhatsApp
         </a>
       </div>
       </div>
