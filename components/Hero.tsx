@@ -29,7 +29,7 @@ function WhatsAppIcon() {
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col items-center text-center py-20 px-4 overflow-hidden">
+    <section className="relative flex flex-col items-center text-center py-9 px-4 overflow-hidden">
       <RippleGrid
         enableRainbow={false}
         gridColor="#22c55e"
@@ -76,9 +76,6 @@ export default function Hero() {
       <p className="text-zinc-400 mb-6">{profile.location}</p>
 
       <div className="flex gap-3 flex-wrap justify-center">
-        <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" className="btn-outline" aria-label="Currículo">
-          <FileDown size={18} />
-        </a>
         <a href={profile.github} target="_blank" rel="noopener noreferrer" className="btn-outline" aria-label="GitHub">
           <GitHubIcon />
         </a>
