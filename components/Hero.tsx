@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { FileDown } from 'lucide-react'
 import { profile } from '@/data/portfolio'
+import RippleGrid from '@/components/RippleGrid'
 
 function GitHubIcon() {
   return (
@@ -28,7 +29,21 @@ function WhatsAppIcon() {
 
 export default function Hero() {
   return (
-    <section className="flex flex-col items-center text-center py-20 px-4">
+    <section className="relative flex flex-col items-center text-center py-20 px-4 overflow-hidden">
+      <RippleGrid
+        enableRainbow={false}
+        gridColor="#22c55e"
+        rippleIntensity={0.04}
+        gridSize={10}
+        gridThickness={18}
+        glowIntensity={0.08}
+        fadeDistance={1.4}
+        vignetteStrength={2.5}
+        mouseInteraction={true}
+        mouseInteractionRadius={1.2}
+        opacity={0.45}
+      />
+      <div className="relative z-10 flex flex-col items-center">
       <div className="relative w-[164px] h-[164px] mb-6">
         <svg
           className="absolute inset-0 w-full h-full"
@@ -84,6 +99,7 @@ export default function Hero() {
           <WhatsAppIcon />
           WhatsApp
         </a>
+      </div>
       </div>
     </section>
   )
