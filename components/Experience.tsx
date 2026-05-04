@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { experience } from '@/data/portfolio'
 
 type ExperienceItem = typeof experience[0]
@@ -32,23 +33,55 @@ function ExperienceCard({ item }: { item: ExperienceItem }) {
   )
 }
 
+function MobileTransitionDivider() {
+  return (
+    <div className="flex gap-4 items-center">
+      <div className="flex flex-col items-center w-7 gap-1.5">
+        <span className="w-1.5 h-1.5 rounded-full bg-zinc-600 block" />
+        <span className="w-1.5 h-1.5 rounded-full bg-zinc-600 block" />
+        <span className="w-1.5 h-1.5 rounded-full bg-zinc-600 block" />
+      </div>
+      <span className="text-zinc-500 text-xs italic tracking-wide">Jornada Profissional</span>
+    </div>
+  )
+}
+
+function DesktopTransitionDivider() {
+  return (
+    <div className="grid grid-cols-[1fr_40px_1fr] items-center -my-2">
+      <div className="pr-4 flex justify-end">
+        <span className="text-zinc-500 text-xs italic tracking-wide"></span>
+      </div>
+      <div className="flex flex-col items-center gap-1.5 z-10">
+        <span className="w-1.5 h-1.5 rounded-full bg-zinc-600 block" />
+        <span className="w-1.5 h-1.5 rounded-full bg-zinc-600 block" />
+        <span className="w-1.5 h-1.5 rounded-full bg-zinc-600 block" />
+      </div>
+      <div />
+    </div>
+  )
+}
+
 export default function Experience() {
   return (
     <section className="max-w-4xl mx-auto px-4 py-8">
-      <h2 className="text-2xl font-bold text-white mb-8 text-center">Experiência</h2>
+      <h2 className="text-2xl font-bold text-white mb-8 text-center">Jornada Profissional</h2>
 
       {/* Mobile: left-border timeline */}
       <div className="flex flex-col gap-8 md:hidden">
         {experience.map((item) => (
-          <div key={item.company} className="flex gap-4">
-            <div className="flex flex-col items-center">
-              <div className="w-3 h-3 mt-6 rounded-full bg-green-500 ring-[3px] ring-zinc-950 shrink-0" />
-              <div className="flex-1 w-px bg-green-500/25 mt-2" />
+          <Fragment key={item.company}>
+            {item.transition && <MobileTransitionDivider />}
+            <div className="flex gap-4">
+              <div className="flex flex-col items-center">
+                <div className="w-3 h-3 mt-6 rounded-full bg-green-500 ring-[3px] ring-zinc-950 shrink-0" />
+                <div className="flex-1 w-px bg-green-500/25 mt-2" />
+              </div>
+              <div className="flex-1 pb-2">
+                <ExperienceCard item={item} />
+              </div>
             </div>
-            <div className="flex-1 pb-2">
-              <ExperienceCard item={item} />
-            </div>
-          </div>
+          </Fragment>
         ))}
       </div>
 
@@ -61,22 +94,22 @@ export default function Experience() {
           {experience.map((item, i) => {
             const isLeft = i % 2 !== 0
             return (
-              <div key={item.company} className="grid grid-cols-[1fr_40px_1fr] items-start">
-                {/* Left slot */}
-                <div className="pr-4">
-                  {isLeft && <ExperienceCard item={item} />}
-                </div>
+              <Fragment key={item.company}>
+                {item.transition && <DesktopTransitionDivider />}
+                <div className="grid grid-cols-[1fr_40px_1fr] items-start">
+                  <div className="pr-4">
+                    {isLeft && <ExperienceCard item={item} />}
+                  </div>
 
-                {/* Center dot */}
-                <div className="flex justify-center pt-6">
-                  <div className="w-3.5 h-3.5 rounded-full bg-green-500 ring-[3px] ring-zinc-950 shrink-0 z-10" />
-                </div>
+                  <div className="flex justify-center pt-6">
+                    <div className="w-3.5 h-3.5 rounded-full bg-green-500 ring-[3px] ring-zinc-950 shrink-0 z-10" />
+                  </div>
 
-                {/* Right slot */}
-                <div className="pl-4">
-                  {!isLeft && <ExperienceCard item={item} />}
+                  <div className="pl-4">
+                    {!isLeft && <ExperienceCard item={item} />}
+                  </div>
                 </div>
-              </div>
+              </Fragment>
             )
           })}
         </div>

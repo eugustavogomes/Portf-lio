@@ -23,22 +23,6 @@ export default function Education() {
           ))}
         </div>
       </div>
-
-      <div>
-        <h2 className="text-2xl font-bold text-white mb-6 text-center">Idiomas</h2>
-        <div className="flex flex-col gap-4">
-          {languages.map((lang) => (
-            <div
-              key={lang.name}
-              className="rounded-xl px-6 py-5 flex justify-between items-center
-                bg-zinc-900 border border-zinc-800"
-            >
-              <span className="text-white font-medium text-lg">{lang.name}</span>
-              <span className="text-green-400 text-base">{lang.level}</span>
-            </div>
-          ))}
-        </div>
-      </div>
     </section>
   )
 }

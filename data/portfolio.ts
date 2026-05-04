@@ -89,6 +89,7 @@ export const experience = [
     company: 'Myth.dev',
     role: 'Desenvolvedor Full-Stack',
     period: 'Jun 2023 – Abr 2024',
+    transition: false,
     bullets: [
       'Reconstruí a interface do dashboard em React + TypeScript durante migração do legado, melhorando navegabilidade e padronizando UI/UX.',
       'Criei uma API interna em C# / ASP.NET Core que varre arquivos React, identifica chaves de tradução e gera JSONs — reduziu o processo de localização em até 80%.',
@@ -102,6 +103,7 @@ export const experience = [
     company: 'Autônomo',
     role: 'Soluções Digitais & Tráfego Pago',
     period: 'Mai 2022 – Abr 2025',
+    transition: false,
     bullets: [
       'Desenvolvi sites responsivos com WordPress, HTML e boas práticas de SEO, ajustando performance para conversão.',
       'Gerenciei campanhas de Google Ads e Facebook Ads com foco em performance, testes A/B e análise de dados.',
@@ -109,6 +111,17 @@ export const experience = [
       'Automatizei processos com Zapier, Make e n8n, reduzindo tarefas manuais e gargalos operacionais.',
     ],
     stack: ['HTML/CSS', 'WordPress', 'Google Ads', 'Facebook Ads', 'Zapier', 'Make', 'n8n'],
+  },
+  {
+    company: 'Exército Brasileiro',
+    role: 'Aspirante a Oficial',
+    period: 'Fev 2019 – Fev 2020',
+    transition: true,
+    bullets: [
+      'Liderei equipes em operações críticas e ambientes de alta pressão, exercendo planejamento estratégico e executando atividades de forma eficiente em cenários dinâmicos e exigentes.',
+      'Desenvolvi habilidades sólidas de análise, gestão de conflitos e resolução ágil de problemas.',
+    ],
+    stack: ['Liderança', 'Gestão de Equipes', 'Planejamento Estratégico', 'Resolução de Conflitos'],
   },
 ]
 
